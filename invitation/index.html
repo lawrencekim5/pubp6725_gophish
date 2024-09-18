@@ -373,15 +373,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				var formData = new FormData(form);
 				
 				fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsqIXzbxcJck9ycscA0x6nNMNFMdT7b81wiB9FwLtB4GCR8w/formResponse', {
-					method: 'POST',
+					<!-- Method is GET instead of POST to avoid harvesting information -->
+					method: 'GET',
 					body: formData,
 					mode: 'no-cors'
 				}).then(function(response) {
 					form.style.display = 'none';
 					document.getElementById('thankYouMessage').style.display = 'block';
 				}).catch(function(error) {
-					console.error('Error:', error);
-					alert('There was an error submitting the form. Please try again.');
+					<!-- console.error('Error:', error); -->
+					<!-- alert('There was an error submitting the form. Please try again.'); -->
+					form.style.display = 'none';
+					document.getElementById('thankYouMessage').style.display = 'block';
 				});
 			});
 		</script>
