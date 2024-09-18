@@ -1,0 +1,33 @@
+'undefined'===typeof Aura&&(Aura={});
+(function() { 
+	 function initAccessResources() {
+			 $A.componentService.addModule('markup://force:customPerms', 'force/customPerms', ['exports'], null, {}); 
+			 $A.componentService.addModule('markup://force:userPerms', 'force/userPerms', ['exports'], null, {UseWebLink: true,EmailAdministration: true,EmailTemplateManagement: true,EnableNotifications: true,AddDirectMessageMembers: true,PasswordNeverExpires: true,AllowUniversalSearch: true,ShowCompanyNameAsUserBadge: true,ActivitiesAccess: true,ContentWorkspaces: true,SelectFilesFromSalesforce: true,EnableCommunityAppLauncher: true,}); 
+	 };
+	 if(Aura.frameworkJsReady)initAccessResources();else{Aura.beforeFrameworkInit=Aura.beforeFrameworkInit||[],Aura.beforeFrameworkInit.push(initAccessResources)}
+})(); 
+Aura.StaticResourceMap = {"SeeHerAsEqualStickFigures":{"":1712190467000},"EngageAlertsDownload":{"pi":1692731068000},"Outlook":{"pi":1724819818000},"PandaDocSdk":{"pandadoc":1669061019000},"SNA_wicys_member_portal1_sf_default_cdn_gOoQo":{"":1726607580000},"SLDS":{"npsp":1655826746000},"pmm":{"pmdm":1710769800000},"LeadDeck":{"pi":1724819818000},"ManageHouseholdjs":{"npo02":1655826746000},"jquery_2_1_1_js":{"pi":1692731068000},"addToNurtureListIcon":{"pi":1692731068000},"SNA_Member_Portal1_sf_default_cdn_CsQhN":{"":1712187673000},"iWaveInstallCSS":{"iWave_PROscores":1716313374000},"badgeIcons":{"iWave_PROscores":1716313301000},"Membership":{"":1725565824000},"analyticsIcons":{"iWave_PROscores":1716313301000},"ChargentStyling":{"ChargentBase":1724773039000},"ckeditorSalesReach":{"pi":1724819818000},"iwaveLogo":{"iWave_PROscores":1716313374000},"scoreicons":{"iWave_PROscores":1716313302000},"font_awesome_4_2_0":{"pi":1692731068000},"AppFrontier_Assets":{"ChargentBase":1724773039000,"ChargentAnyObj":1724776606000},"Promise":{"pi":1724819818000},"jszip":{"dlrs":1673292346000},"pageViews":{"pi":1692731068000},"PardotRedirectSuccessMessageImg":{"pi":1692731068000},"LegacyPardot":{"pi":1724819818000},"CumulusStaticResources":{"npsp":1718574321000},"SCE_LicenseAssignmentPage":{"pi":1692731068000},"ManageHouseholdcss":{"npo02":1655826746000},"SalesEdgeErrPage":{"pi":1692731068000},"ElevateHealthCheckResources":{"ccsi_npsp":1667323121000},"EngageSalesTools":{"pi":1724819817000},"jquery_time_ago":{"pi":1692731068000},"DLRS_Logo":{"dlrs":1673292346000},"CreditCardJS":{"ChargentBase":1724773040000},"jquery_ui_1_11_1_custom_has_dialog":{"pi":1692731068000},"SObjectMapper":{"pandadoc":1669061019000},"insightsIcons":{"iWave_PROscores":1716313301000},"MarketingActions":{"pi":1724819818000},"MicroCampaign":{"pi":1724819818000},"Lead_Deck":{"pi":1692731068000},"jquery_ui_1_12_1":{"pi":1692731068000},"pgIcons":{"iWave_PROscores":1716313302000},"FeatureFlagDefaults":{"pi":1692731068000},"ProScoreLogo":{"iWave_PROscores":1669133957000},"loadingSpinner":{"pi":1692731068000},"currency":{"iWave_PROscores":1669133957000},"Mobile_Design_Templates":{"pi":1692731068000},"PardotLightningDesignSystem_unversioned":{"pi":1692731068000},"setupPageCss":{"pandadoc":1669061019000},"ProximaNovaSoft":{"pi":1692731068000},"SiteSamples":{"":1712878648000},"BT_NamespaceStateCodeList":{"BrightTALK":1710434072000},"EngagementHistory":{"pi":1724819817000},"ChargentCustomCheckout":{"ChargentBase":1724773039000},"icon_utility":{"pi":1692731068000},"DefaultReciprocalRelationships":{"npe4":1655826746000},"Error":{"pi":1724819818000},"toastNewLines":{"iWave_PROscores":1669133957000},"RecipientsPage":{"pandadoc":1669061019000},"inclusivePayload":{"pi":1692731068000},"DefaultGiftEntryTemplate":{"npsp":1655826746000},"icons":{"iWave_PROscores":1716313301000},"FontAwesome":{"iWave_PROscores":1716313301000},"iWaveSquareSocial60x60":{"iWave_PROscores":1669133957000},"jQuery":{"iWave_PROscores":1669133957000},"sfdo203":{"npsp":1655826746000},"BT_NamespaceCountryCodeList":{"BrightTALK":1710434072000},"Together_We_Thrive":{"":1712190467000},"ProScoreCSS":{"iWave_PROscores":1669133957000}};
+
+(function() {
+function initResourceGVP() {
+if (!$A.getContext() || !$A.get('$Resource')) {
+$A.addValueProvider('$Resource',
+{
+merge : function() {},
+isStorable : function() { return false; },
+get : function(resource) {
+var modStamp, rel, abs, name, ns;
+var nsDelim = resource.indexOf('__');
+if (nsDelim >= 0) { ns = resource.substring(0, nsDelim); name = resource.substring(nsDelim + 2); } else { name = resource; }
+var srMap = Aura.StaticResourceMap[name];
+modStamp = srMap && srMap[ns = ns || Object.keys(srMap)[0]];
+if (!modStamp) { return; }
+rel = $A.get('$SfdcSite.pathPrefix');
+abs = $A.get('$Absolute.url');
+return [(abs || rel || ''), '/resource/', modStamp, '/', ns === '' ? name : ns + '__' + name].join('');
+}
+});
+}
+}
+if(Aura.frameworkJsReady)initResourceGVP();else{Aura.beforeFrameworkInit=Aura.beforeFrameworkInit||[],Aura.beforeFrameworkInit.push(initResourceGVP)}
+})();
